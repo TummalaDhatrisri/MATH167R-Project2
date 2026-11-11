@@ -1,0 +1,3 @@
+geographic_system,number_of_areas,occupied_areas,restaurants_assigned,unmatched_restaurants,smallest_area_count,largest_area_count
+Neighborhood Statistical Areas,72,54,632,16,1,162
+2020 Census Tracts,184,108,632,16,1,115
