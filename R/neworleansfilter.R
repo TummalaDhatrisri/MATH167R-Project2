@@ -41,15 +41,20 @@ saveRDS(
   compress = "gzip"
 )
 
-new_orleans_business <- readRDS(
-  "data/new_orleans/new_orleans_business.rds"
-)
+new_orleans_business <- readRDS("data/new_orleans/new_orleans_business.rds")
 
 dim(new_orleans_business)
 
 restaurant_ids <- new_orleans_business$business_id
 
+category_data <- new_oreleans_business %>%
+  separate_rows(categories, sep = ",") %>%
+  mutate(categories = str_trim(categories))
 
+category_counts <- category_data %>%
+  count(categories, sort = TRUE)
+
+head(category_counts, 30)
 
 
 
